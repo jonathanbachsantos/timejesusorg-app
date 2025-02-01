@@ -6,6 +6,8 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
+import ListPages from '@/components/ListPages';
+import PageScreen from '@/components/PageScreen';
 
 export default function TabTwoScreen() {
   return (
@@ -91,6 +93,9 @@ export default function TabTwoScreen() {
           ),
         })}
       </Collapsible>
+
+      
+      <PageScreen></PageScreen>
     </ParallaxScrollView>
   );
 }

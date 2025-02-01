@@ -2,6 +2,7 @@ import axios from 'axios'
 import { substituirCaracteresEspeciais } from '@/utils/converHTMLtoText'
 
 // Base URL da API do WordPress
+const BASE_URL = 'https://timejesus.org/wp-json/wp/v2';
 const WORDPRESS_API_URL = 'https://timejesus.org/wp-json/wp/v2/posts'
 //const WORDPRESS_API_URL = 'https://nurlejol.org/wp-json/wp/v2/posts'
 //const WORDPRESS_API_URL = 'https://www.eydengejol.com/wp-json/wp/v2/posts'
@@ -124,6 +125,26 @@ export const getVideoPosts = async () => {
     );
   } catch (error) {
     console.error('Erro ao buscar posts de vídeo:', error);
+    throw error;
+  }
+};
+
+export const fetchPages = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/pages`);
+    return await response.json();
+  } catch (error) {
+    console.error('Erro ao buscar páginas:', error);
+    throw error;
+  }
+};
+
+export const fetchPageById = async (id: number = 819) => {
+  try {
+    const response = await fetch(`${BASE_URL}/pages/${id}`);
+    return await response.json();
+  } catch (error) {
+    console.error(`Erro ao buscar a página com ID ${id}:`, error);
     throw error;
   }
 };

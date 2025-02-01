@@ -84,7 +84,6 @@ export default function HomeScreen() {
         </ThemedText>
       </ThemedView>
       <View style={styles.container}>
-        <LinearGradient colors={gradientColors} style={styles.background} />
         {/* Personalização da StatusBar */}
         <StatusBar barStyle='light-content' backgroundColor='#000' />
 
@@ -112,5 +111,28 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     position: 'absolute',
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#000', // Fundo escuro
+  },
+  header: {
+    padding: 16,
+    backgroundColor: '#1a1a1a',
+    borderBottomWidth: 1,
+    borderBottomColor: '#333',
+  },
+  background: {
+    position: 'absolute',
+    width: width,
+    height: height * 2,
+    top: 0,
+    left: 0,
+  },
+  headerText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+    textAlign: 'center',
   },
 })

@@ -10,7 +10,6 @@ import {
   ActivityIndicator,
 } from 'react-native'
 import VideoScreen from './VideoScreen'
-import { useVideoPlayer, VideoView } from 'expo-video';
 import { getLast10PostsWithVideo } from '@/services/api'
 
 const { width } = Dimensions.get('window')
